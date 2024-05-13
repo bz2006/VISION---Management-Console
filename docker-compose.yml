@@ -1,0 +1,26 @@
+version: '3'
+services:
+  backend-manage:
+    build:
+      context: ./VISION-Management
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+  frontend-manage:
+     build:
+      context: ./VISION-Management/frontend
+      dockerfile: Dockerfile
+     ports:
+      - '3000:3000'
+  backend-web:
+    build:
+      context: ./VISION-Web-Management
+      dockerfile: Dockerfile
+    ports:
+      - '5001:5001'
+  frontend-web:
+     build:
+      context: ./VISION-Web-Management/client
+      dockerfile: Dockerfile
+     ports:
+      - '3001:3001'
